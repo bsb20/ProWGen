@@ -290,7 +290,7 @@ RequestStream::GenerateAllRequests()
 	     index = (unsigned int)(noofDistinctDocs*erand48(seed)); 
 	    
 	     Request *req = uniqueDoc[index];
-	     fprintf(fp,"%10u %10u\n",req->GetFileId(),req->GetFileSize());
+	     fprintf(fp,"%u,%u\n",req->GetFileId(),req->GetFileSize());
 	     totalReqGenerated++;
 	     req->DecFreq();
 	     uniqueDoc[index] = uniqueDoc[noofDistinctDocs-1];

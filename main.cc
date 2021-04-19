@@ -50,23 +50,23 @@ char* statisticsFile = "test-uniquedocs3.dat";
 
 
 //this is the desired Zipf slope of the workload, usually within 0 and 1.0
-float zipfSlope = 0.75; 
+float zipfSlope = 1.05; 
 
 //the heavy tail index of the workload, usually within 0 and 2.0
-float paretoTailIndex = 1.2; 
+float paretoTailIndex = 2; 
 
 //the total number of requests desired in the workload
-int totalNoofRequests =  200000;
+int totalNoofRequests =  435326695;
 
 //percentage of distinct documents of total number of requests. This is a typical value, but usually
 //it is between 25% to 40%. If you are synthesizing a workload to mimic an empirical one, you may 
 //need to measure this value out and set this variable appropriately.
-float distinctDocsPerc = 30;
+float distinctDocsPerc = 3;
 
 
 //percentage of 1-timers desired out of the distinct documents. For proxy workload it is between 
 //50-70%. You are free to set this value at whatever value you want of course.
-float oneTimerPerc = 70; 
+float oneTimerPerc = .5; 
 
 //This allows correlation to be introduced between popularity and file size. A value of 0 will 
 //introduce the normal close-to-zero correlation. Set this value at -1 if you want negative correllation,
@@ -82,11 +82,11 @@ unsigned int stacksize = 1000;
 //configure this variable to be 0, else use 1. Workloads with static seems to introduce more temporal 
 //locality than dynamic. The dynamic is more representative of empirical ones. So, to mimic an empirical
 //workload, use dynamic.
-unsigned int stackmode = 0; 
+unsigned int stackmode = 1; 
 
 //this is the percentage of documents at the tail of the file size distribution, out of the distinc
 //documents
-float percAtTail = 20; 
+float percAtTail = 0; 
 
 //the beginning of the tail 
 float K = 10000;
@@ -95,8 +95,8 @@ float K = 10000;
 //size distribution. If you are mimicking an empirical workload and the file size distribution does 
 //not match very well, you might need to adjust these values, otherwise these values seem to work
 //okay.
-float mean =  14000;
-float std = 22000;
+float mean =  1359.5;
+float std = 931.68;
 
 
 //declare a request stream object (see stream.h and .cc)

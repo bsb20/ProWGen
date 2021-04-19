@@ -180,7 +180,7 @@ Stack::LocateDoc(double randNum, unsigned int noofDistinctDocs, FILE *fp)
  Request *temp = bucket[loc];
 
  //generate a request for this object in the fp stream
- fprintf(fp,"%10u %10u\n",temp->GetFileId(),temp->GetFileSize());
+ fprintf(fp,"%u,%u\n",temp->GetFileId(),temp->GetFileSize());
  temp->DecFreq();
 
  //if there are more request for this doc, move all items above loc down one 
